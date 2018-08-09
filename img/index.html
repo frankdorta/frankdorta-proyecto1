@@ -1,0 +1,1202 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Laravelsite</title>
+
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+
+        <!-- Styles -->
+        <style>
+
+img {
+    opacity: 0.5;
+    filter: alpha(opacity=50); /* For IE8 and earlier */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@import  "compass/css3";
+
+.navigation {
+  list-style: none;
+  margin: 0; 
+  
+  background: indigo;
+  
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  
+  -webkit-flex-flow: row wrap;
+  justify-content: flex-start;
+}
+
+.navigation a {
+  text-decoration: none;
+  display: block;
+  padding: 1em;
+  color: black;
+}
+
+.navigation a:hover {
+  background: maroon(white, 86%);
+}
+
+@media  all and (max-width: 800px) {
+  .navigation {
+    justify-content: space-around;
+  }
+}
+
+@media  all and (max-width: 600px) {
+  .navigation {
+    -webkit-flex-flow: column wrap;
+    flex-flow: column wrap;
+    padding: 0;
+  }
+  
+  .navigation a { 
+    text-align: center; 
+    padding: 20px;
+    border-top: 1px solid rgba(255,255,255,0.3); 
+    border-bottom: 1px solid rgba(0,0,0,0.1); 
+  }
+
+  
+  .navigation li:last-of-type a {
+    border-bottom: none;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            html, body {
+                background-color: ivory;
+                color: black;
+                font-family: 'Raleway', sans-serif;
+                font-weight: 400;
+                height: 30vh;
+                margin: 0;
+            }
+
+            .full-height {
+                height: 100vh;
+            }
+
+            .flex-star {
+                align-items: start;
+                display: flex ;
+                justify-content: start;
+            }
+
+            .position-ref {
+                position: relative;
+            }
+
+            .top-right {
+                position: absolute;
+                right: 10px;
+                top: 18px;
+            }
+
+            .content {
+                text-align: start;
+            }
+
+            .title {
+                font-size: 44px;
+            }
+
+            .links > a {
+                color: black;
+                padding: 0 25px;
+                font-size: 12px;
+                font-weight: 600;
+                letter-spacing: .1rem;
+                text-decoration: none;
+                text-transform: uppercase;
+        
+ }
+
+            .m-b-md {
+                margin-bottom: 30px;
+            }
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+  
+
+
+
+
+.carousel
+
+
+   
+html {
+  background: indigo;
+  font-family: sans-serif;
+  font-size: 14px;
+}
+
+
+}
+
+.article-image {
+  background: indigo;
+  display: block;
+  padding-top: 75%;
+  position: relative;
+  width: 100%;
+}
+
+.article-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.article-title {
+  color: indigo;
+  flex-shrink: 0;
+  font-size: 1.4em;
+  font-weight: bold;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.article-content {
+  flex: 1;
+  margin-top: 5px;
+}
+
+.article-info {
+  display: flex;
+  font-size: 0.85em;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Hexagons */
+#hexGrid {
+  overflow: hidden;
+  width: 90%;
+  margin: 0 auto;
+  padding: 0.866% 0;
+  font-family: 'Raleway', sans-serif;
+  font-size: 15px;
+}
+
+#hexGrid:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.hex {
+  position: relative;
+  list-style-type: none;
+  float: left;
+  overflow: hidden;
+  visibility: hidden;
+  outline: 1px solid transparent;  /* fix for jagged edges in FF on hover transition */
+  transform: rotate(-60deg) skewY(30deg) translatez(-1px);
+}
+
+.hex * {
+  position: absolute;
+  visibility: visible;
+  outline: 1px solid transparent;  /* fix for jagged edges in FF on hover transition */
+}
+
+.hexIn {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  color: black;
+  overflow: hidden;
+  transform: skewY(-30deg) rotate(60deg);
+}
+
+
+/*** HEX CONTENT **********************************************************************/
+
+.hex img {
+  left: -100%;
+  right: -100%;
+  width: auto;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.hex h1,
+.hex p {
+  margin: 0;
+  width: 102%;
+  left: -1%;  /* prevent line on the right where background doesn't cover image */
+  padding: 5%;
+  box-sizing: border-box;
+  background-color: rgba(0, 128, 128, 0.8);
+  font-weight: 300;
+  transition: transform .2s ease-out, opacity .3s ease-out;
+}
+
+.hex h1 {
+  bottom: 50%;
+  padding-top: 50%;
+  font-size: 1.5em;
+  z-index: 1;
+  transform: translateY(-100%) translatez(-1px);
+}
+
+.hex h1:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 45%;
+  width: 10%;
+  text-align: center;
+  border-bottom: 1px solid darkorange;
+}
+
+.hex p {
+  top: 50%;
+  padding-bottom: 50%;
+  transform: translateY(100%) translatez(-1px);
+}
+
+
+/*** HOVER EFFECT  **********************************************************************/
+
+.hexIn:hover h1, .hexIn:focus h1, .hexIn:hover p, .hexIn:focus p {
+  transform: translateY(0%) translatez(-1px);
+}
+
+
+/*** SPACING AND SIZING *****************************************************************/
+
+@media (min-width:1201px) {  /* <- 2-3  hexagons per row */
+  .hex {
+    width: 32.666%;    /* = (100-2) / 3 */
+    padding-bottom: 37.720%;    /* =  width / sin(60) */
+  }
+  .hex:nth-child(5n+1),
+  .hex:nth-child(5n+2) {
+    transform: translateX(50%) rotate(-60deg) skewY(30deg);
+  }
+  .hex:nth-child(5n+3),
+  .hex:nth-child(5n+4),
+  .hex:nth-child(5n+5) {
+    margin-top: -8.564%;
+    margin-bottom: -8.564%;
+  }
+  .hex:nth-child(5n+2),
+  .hex:nth-child(5n+4) {
+    margin-right: 1%;
+    margin-left: 1%;
+  }
+  .hex:nth-child(5n+1) {
+    margin-left: 0.5%;
+  }
+  .hex:nth-child(5n+3),
+  .hex:nth-child(5n+6) {
+    clear: left;
+  }
+}
+
+@media (max-width: 1200px) {  /* <- 1-2  hexagons per row */
+  .hex {
+    width: 49.5%;    /* = (100-1) / 2 */
+    padding-bottom: 57.158%;    /* =  width / sin(60) */
+  }
+  .hex:nth-child(3n+1) {
+    transform: translateX(50%) rotate(-60deg) skewY(30deg);
+  }
+  .hex:nth-child(3n+2),
+  .hex:nth-child(3n+3) {
+    margin-top: -13.423%;
+    margin-bottom: -13.423%;
+  }
+  .hex:nth-child(3n+1) {
+    margin-left: 0.5%
+  }
+  .hex:nth-child(3n+3) {
+    margin-left: 1%;
+  }
+  .hex:nth-child(3n+2),
+  .hex:nth-child(3n+4) {
+    clear: left;
+  }
+}
+
+@media (max-width: 400px) {
+  #hexGrid {
+    font-size: 13px;
+  }
+}
+
+/* End Hexagons */
+/* fork on github button */
+#fork{
+  font-family: 'Raleway', sans-serif;
+  position:fixed;
+  top:0;
+  left:0;
+  color:indigo;
+  text-decoration:none;
+  border:1px solid midnightblue;
+  padding:.5em .7em;
+  margin:1%;
+  transition: color .5s;
+  overflow:hidden;
+}
+#fork:before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 130%; height: 100%;
+  background: black;
+  z-index: -1;
+  transform-origin:0 0 ;
+  transform:translateX(-100%) skewX(-45deg);
+  transition: transform .5s;
+}
+#fork:hover {
+  color: black;
+}
+#fork:hover:before {
+  transform: translateX(0) skewX(-45deg);
+}
+   
+    
+    
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+  
+
+
+a:hover {
+  background-color: maroon;
+}
+
+
+  
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </style>
+    </head>
+    <body>
+
+
+
+
+
+<div class="progress">
+  <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+<div class="progress">
+  <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+<div class="progress">
+  <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+<div class="progress">
+  <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+<div class="progress">
+  <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+
+
+
+
+
+<div class="progress">
+  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+</div>
+
+
+ 
+
+<ul class="navigation">
+  <li><a href="https://agile-savannah-22396.herokuapp.com/projects">projects</a></li>
+  <li><a href="https://agile-savannah-22396.herokuapp.com/about">About</a></li>
+  <li><a href="https://agile-savannah-22396.herokuapp.com/products">product</a></li>
+  <li><a href="https://agile-savannah-22396.herokuapp.com/contact">Contact</a></li>
+    <li><a href="https://agile-savannah-22396.herokuapp.com/paypalsdk">paypalsdk</a></li>
+        <li><a href="https://agile-savannah-22396.herokuapp.com/stripe">stripe</a></li>
+
+
+</ul>
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h1 class="text-hide">somos laravelsite</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="bg-info clearfix">
+  <button type="button" class="btn btn-secondary float-left">THANK GOD FOR LIFE </button>
+  <button type="button" class="btn btn-secondary float-right">Welcome to laravelsite</button>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="full-height">
+                            <div class="top-right links">
+                                            <a href="https://agile-savannah-22396.herokuapp.com/login">Login</a>
+                        <a href="https://agile-savannah-22396.herokuapp.com/register">Register</a>
+                                    </div>
+            
+        
+
+
+
+
+
+            <div class="flex-star content">
+                <div class="title m-b-md">
+                    
+                </div>
+
+                <div class="links">
+                     <a href="https://agile-savannah-22396.herokuapp.com/download">download</a>
+                     <a href="https://agile-savannah-22396.herokuapp.com/technologies">technologies</a>
+                     <a href="https://agile-savannah-22396.herokuapp.com/shoopingcart">shoopingcart</a>
+                     <a href="https://agile-savannah-22396.herokuapp.com/blog">blog</a>
+                     
+              
+              
+              
+              
+                  
+
+<nav class="navbar navbar-light bg-light">
+  <form class="form-inline">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+  </form>
+</nav>
+              
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+         <img class="d-block img-fluid" src="https://lh3.googleusercontent.com/-Kw0mhxdFt2I/W2ON4BvZrNI/AAAAAAAAD5I/qu0cqn7ZqzQlk9sOC7VtBXo2--_Spu2PACL0BGAYYCw/h856/2018-08-02.png" " alt="First slide">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    <div class="carousel-item">
+         <img class="d-block img-fluid" src="https://lh3.googleusercontent.com/-Kw0mhxdFt2I/W2ON4BvZrNI/AAAAAAAAD5I/qu0cqn7ZqzQlk9sOC7VtBXo2--_Spu2PACL0BGAYYCw/h856/2018-08-02.png" " alt="First slide">
+
+    </div>
+    <div class="carousel-item">
+
+         <img class="d-block img-fluid" src="https://lh3.googleusercontent.com/-Kw0mhxdFt2I/W2ON4BvZrNI/AAAAAAAAD5I/qu0cqn7ZqzQlk9sOC7VtBXo2--_Spu2PACL0BGAYYCw/h856/2018-08-02.png" " alt="First slide">
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+              </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+           
+              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+    
+    
+    
+    
+  
+
+           
+          
+   
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+ 
+  
+
+ 
+
+ 
+  
+ 
+ 
+
+  
+  
+  
+  
+
+ 
+ 
+ 
+  <li class="hex">
+    <a class="hexIn" href="http://agile-savannah-22396.herokuapp.com/">
+     ">
+      <img src="           https://lh3.googleusercontent.com/-Kw0mhxdFt2I/W2ON4BvZrNI/AAAAAAAAD5I/qu0cqn7ZqzQlk9sOC7VtBXo2--_Spu2PACL0BGAYYCw/h856/2018-08-02.png
+" alt="localhost:8000" >
+<h1> In rewiew: Design 
+   Arquictecture and Craft!  
+Hand crafted artisanal expresso essential the 
+highest quality remarkable ANA, Helsinki
+ Marylebone intricate. Carefully curanted the best 
+ Singapore Ryokan International quality of life
+ discernir tsutaya Airport </h1>
+
+
+
+
+
+    </a>
+  </li>
+
+
+
+
+<a id="fork" target="_blank" href="http://laravelsite.herokuapp.com">CURSOCOMPU01</a>
+
+    <a class="hexIn" href="http://agile-savannah-22396.herokuapp.com/">
+
+">
+
+
+      <img src="           https://lh3.googleusercontent.com/-Kw0mhxdFt2I/W2ON4BvZrNI/AAAAAAAAD5I/qu0cqn7ZqzQlk9sOC7VtBXo2--_Spu2PACL0BGAYYCw/h856/2018-08-02.png
+      <img src="           https://lh3.googleusercontent.com/-Kw0mhxdFt2I/W2ON4BvZrNI/AAAAAAAAD5I/qu0cqn7ZqzQlk9sOC7VtBXo2--_Spu2PACL0BGAYYCw/h856/2018-08-02.png
+
+
+" alt="http://agile-savannah-22396.herokuapp.com/" >
+
+
+
+<h1> Maira Kalman: Portraits In Creativity </h1>
+
+
+
+    </a>
+
+  </li>
+
+
+
+
+
+  <li class="hex">
+    <a class="hexIn" href=http://agile-savannah-22396.herokuapp.com/" >
+        ">
+      <img src="https://lh3.googleusercontent.com/-Kw0mhxdFt2I/W2ON4BvZrNI/AAAAAAAAD5I/qu0cqn7ZqzQlk9sOC7VtBXo2--_Spu2PACL0BGAYYCw/h856/2018-08-02.png
+             " alt="localhost:8000" >
+      <h1>Having That Moment
+      (Again!)
+       Carefully curate the best Singapure ryokan 
+       International quality the life discerning Tsutaya </h1> 
+
+
+    </a>
+  </li>
+
+
+  <li class="hex">
+    <a class="hexIn" href="http://agile-savannah-22396.herokuapp.com/"
+           ">
+      <img src="https://lh3.googleusercontent.com/-Kw0mhxdFt2I/W2ON4BvZrNI/AAAAAAAAD5I/qu0cqn7ZqzQlk9sOC7VtBXo2--_Spu2PACL0BGAYYCw/h856/2018-08-02.png
+        " alt="">
+      <h1>   Get the Looks Black and a dose the apptitude </h1>
+      
+          
+          
+
+    </a>
+  </li>
+
+
+
+
+  <li class="hex">
+    <a class=" hexIn" href="http://agile-savannah-22396.herokuapp.com/
+   ">
+      <img src="https://lh3.googleusercontent.com/-Kw0mhxdFt2I/W2ON4BvZrNI/AAAAAAAAD5I/qu0cqn7ZqzQlk9sOC7VtBXo2--_Spu2PACL0BGAYYCw/h856/2018-08-02.png
+    " alt="" >
+      <h1>Paul Kafner: Driving
+      Breaking That Mold</h1>
+    </a>
+  </li>
+
+
+  <li class="hex">
+
+
+
+  <li class="hex">
+
+ <a class=" hexIn" href="http://agile-savannah-22396.herokuapp.com/
+
+">
+
+      <img src="https://lh3.googleusercontent.com/-Kw0mhxdFt2I/W2ON4BvZrNI/AAAAAAAAD5I/qu0cqn7ZqzQlk9sOC7VtBXo2--_Spu2PACL0BGAYYCw/h856/2018-08-02.png
+
+    " alt="" >
+      <h1>Who Looks Better Than
+
+You In a Suit</h1>
+
+    </a>
+
+  </li>
+
+
+
+  
+</ul>
+
+<a id="fork" target="_blank" href="http://agile-savannah-22396.herokuapp.com">CURSOINFMAT01</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </body>
+</html>
